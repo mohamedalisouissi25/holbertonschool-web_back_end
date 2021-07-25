@@ -15,3 +15,5 @@ class BasicCache(BasicCaching):
         """function get"""
         if key:
             return self.cache_data.get(key)
+        else:
+            return None
