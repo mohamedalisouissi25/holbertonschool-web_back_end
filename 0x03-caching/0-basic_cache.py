@@ -1,24 +1,18 @@
 #!/usr/bin/env python3
-"""Caching"""
+""" caching """
+BaseCaching = __import__('base_caching').BaseCaching
 
 
-BasicCaching = __import__('base_caching').BaseCaching
-
-
-class BasicCache(BasicCaching):
-    """cache class"""
-    def __init__(self):
-    """constructor func init"""
-        super().__init__()
+class BasicCache(BaseCaching):
+    """ a basic caching system class """
 
     def put(self, key, item):
-        """function put"""
+        """ function put """
         if key and item:
             self.cache_data[key] = item
 
     def get(self, key):
-        """function get"""
-        if key not in self.cache_data.keys():
-            return None
-        else:
+        """ function get """
+        if key and key in self.cache_data:
             return self.cache_data[key]
+        return None
