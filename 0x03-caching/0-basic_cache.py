@@ -11,7 +11,7 @@ class BasicCache(BasicCaching):
     """constructor func init"""
         super().__init__()
 
-def put(self, key, item):
+    def put(self, key, item):
         """function put"""
         if key and item:
             self.cache_data[key] = item
