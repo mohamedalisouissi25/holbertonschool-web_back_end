@@ -29,7 +29,7 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """fun get_page"""
         assert type(page) == int and page > 0
-        assert  type(page_size) == int and page_size > 0
+        assert type(page_size) == int and page_size > 0
         index, indexes = index_range(page, page_size)
         if index > len(self.dataset()):
             return []
